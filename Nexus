@@ -1,0 +1,8 @@
+FROM sonatype/nexus3:latest
+
+ENV NEXUS_SECURITY_RANDOMPASSWORD false
+ENV NEXUS_SECURITY_ADMIN_PASSWORD admin123
+
+EXPOSE 8081
+VOLUME /nexusdata
+CMD ["sh", "-c", "exec /opt/sonatype/nexus/bin/nexus run"]
